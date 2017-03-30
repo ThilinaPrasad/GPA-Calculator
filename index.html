@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body  id="main">
+<!navigation bar>
+<header>
+    <ul>
+        <li><a id="navNavigate" class="active" href="#home" onclick="if(isFull){openNav()}else{closeNav()}"><span style="font-size:12px;cursor:pointer" >&#9776; Navigate</span></a></li>
+        <li id="searcher"><form method="get" action="http://www.getgooglesearch.com/htmlcodes/searchg" id="navSearch"><input type="search" id="searchBar" placeholder="Search in Google"></form></li>
+        <li id="navLogo"><img src="img/navLogo.png"></li>
+    </ul>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="http://www.mrt.ac.lk/web/" target="_blank">University Of Moratuwa</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">About Developers</a>
+    </div>
+
+
+</header>
+<!navigation bar>
+
+<section>
+<div class="wrapper">
+    <form>
+        <select id="semDD" class="grades" onchange="if($semSelectDD.selectedIndex==1){hideElement($depSelectDD);}else{showElement($depSelectDD);}">
+            <option  hidden>Select the Semester</option>
+            <option value="1" >Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+        </select>
+        <select id="depDD" style="visibility: hidden">
+            <option value="" selected hidden>Select the Department</option>
+            <option>Electronic & Telecommunication Engineering</option>
+            <option>Computer Science & Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Civil Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Chemical & Process Engineering</option>
+            <option>Material Science & Engineering</option>
+            <option>Textile & Clothing Technology</option>
+            <option>Earth Resource Engineering</option>
+            <option>Transport & Logistic Management</option>
+        </select>
+        <br>
+
+        <div id="sub1" class="subs"></div>
+        <select class="grades">
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+        <br>
+        <div id="sub2"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+        <br>
+        <div id="sub3"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+        <br>
+        <div id="sub4"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+
+        <br>
+        <div id="sub6"></div>
+        <select>
+        <option value="" selected hidden>Grade</option>
+        <option value="4.2">A+</option>
+        <option value="4.0">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.3">B+</option>
+        <option value="3.0">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.3">C+</option>
+        <option value="2.0">C</option>
+        <option value="1.5">C-</option>
+        <option value="1.0">D</option>
+        <option value="0.0">F</option>
+        <option value="0.0">I-we</option>
+        <option value="0.0">I-ca</option>
+    </select>
+
+        <br>
+        <div id="sub7"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+
+        <br>
+        <div id="sub8"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+
+        <br>
+        <div id="sub9"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+
+        <br>
+        <div id="sub10"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+        <br>
+        <div id="sub11"></div>
+        <select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select>
+    </form>
+    <input type="number" id="olderGPA">
+    <input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()">
+    <input type="button" id="resetBtn" Value="Reset Fields">
+</div>
+</section>
+
+<footer></footer>
+<script src="js/main.js"></script>
+<script src="js/style.js"></script>
+</body>
+</html>
