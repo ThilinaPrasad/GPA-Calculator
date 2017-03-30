@@ -78,7 +78,7 @@ li a.active {
     background: -webkit-repeating-linear-gradient(-45deg,#800000,#B22222 6px);
 }
 
-
+/*Search Bar*/
 #searcher{
     margin-left: auto;
     margin-right: 10px;
@@ -111,18 +111,7 @@ li a.active {
     border: none;
 }
 
-/*navigation bar*/
-
-
-.wrapper{
-    margin: 2% auto ;
-    width: 80vw;
-    height: 80vh;
-    background: -webkit-repeating-linear-gradient(-45deg,#800000,#B22222 6px);
-    /*background: url("../img/bf.png");
-    background-size: 100% 100%;*/
-    box-shadow:gray 10px 10px 15px;
-}
+/*Search Bar*/
 
 @media  screen and (max-width: 450px) {
     ul {
@@ -134,4 +123,15 @@ li a.active {
     #navNavigate{
         width: 100%;
     }
+}
+/*navigation bar*/
+
+.wrapper{
+    margin: 2% auto ;
+    width: 80vw;
+    height: 80vh;
+    background: -webkit-repeating-linear-gradient(-45deg,#800000,#B22222 6px);
+    /*background: url("../img/bf.png");
+    background-size: 100% 100%;*/
+    box-shadow:gray 10px 10px 15px;
 }
