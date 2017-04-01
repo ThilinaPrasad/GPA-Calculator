@@ -21,8 +21,10 @@ function semDDOnChange(){
     gradeReset();
     if($semSelectDD.selectedIndex==1){
         hideElement($depSelectDD);
+        $oldGPA.style.visibility='hidden';
     }else{
         showElement($depSelectDD);
+        $oldGPA.style.visibility='visible';
     }
 }
 
