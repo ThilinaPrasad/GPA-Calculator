@@ -1,4 +1,8 @@
 /*navigation bar*/
+html{
+    height: 80%;
+}
+body{height: 80%}
 .sidenav {
     height: 100%;
     width: 0;
@@ -88,7 +92,7 @@ li a.active {
     display: flex;
     width:10%;
     height: 100%;
-    padding: 10.5px;
+    padding: 11px;
     padding-right: 45px;
     color: #313131;
     border: none;
@@ -101,7 +105,6 @@ li a.active {
 
 #searchBar:hover{
     width: 83vw;
-    border: solid 1.5px #800000;
     border: none;
 }
 
@@ -110,23 +113,10 @@ li a.active {
     outline:none;
     border: none;
 }
-marquee{
-    position: absolute;
-}
 
 /*Search Bar*/
 
-@media  screen and (max-width: 450px) {
-    ul {
-        -webkit-flex-direction: column;
-    }
-    #navLogo{
-        margin: auto;
-    }
-    #navNavigate{
-        width: 100%;
-    }
-}
+
 /*navigation bar*/
 
 .wrapper{
@@ -134,8 +124,6 @@ marquee{
     width: 80vw;
     height: 80vh;
     background: -webkit-repeating-linear-gradient(-45deg,#800000,#B22222 6px);
-    /*background: url("../img/bf.png");
-    background-size: 100% 100%;*/
     box-shadow:gray 10px 10px 15px;
 }
 
@@ -167,6 +155,49 @@ select:focus {
     text-align: center;
 }
 
+.subs , .grade{
+    visibility: hidden;
+}
+
 table{
     margin: auto;
 }
+
+#semDD{
+    margin-top: 225px;
+    margin-left: 250px;
+    background-color: #B22222;
+    width: 250px;
+    height: 70px;
+    font-size: large;
+    padding: 10px;
+    color: white;
+    border-radius: 50px;
+    border-color: white;
+    transition: margin-top 1s, margin 1s;
+}
+
+
+/*responsive*/
+@media  screen and (max-width: 450px) {
+    ul {
+        -webkit-flex-direction: column;
+    }
+    #navLogo{
+        margin: auto;
+    }
+    #navNavigate{
+        width: 100%;
+    }
+
+    #semDD{
+        width: 200px;
+        height: 30px;
+        font-size: small;
+        margin-left: 40px;
+        margin-top: 175px;
+        padding: 0;
+        border-width: 3px;
+    }
+}
+/*responsive*/
