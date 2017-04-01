@@ -110,6 +110,9 @@ li a.active {
     outline:none;
     border: none;
 }
+marquee{
+    position: absolute;
+}
 
 /*Search Bar*/
 
@@ -134,4 +137,36 @@ li a.active {
     /*background: url("../img/bf.png");
     background-size: 100% 100%;*/
     box-shadow:gray 10px 10px 15px;
+}
+
+select {
+    background-color: white;
+    width : auto;
+    height: 30px;
+    border-radius: 5px;
+    color: #800000;
+    border-color: #800000;
+    border-width: 3px;
+    font-weight: 700;
+}
+
+select:focus {
+    outline-color: red;
+}
+
+.subs{
+    width:400px;
+    height:30px;
+    border-radius: 5px;
+    color: #800000;
+    border: solid;
+    border-color: #800000;
+    border-width: 3px;
+    font-weight: 700;
+    background-color: white;
+    text-align: center;
+}
+
+table{
+    margin: auto;
 }

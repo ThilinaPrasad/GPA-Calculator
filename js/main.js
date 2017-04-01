@@ -12,11 +12,9 @@ function sem(){
 
 function hideElement($temp) {
     $temp.style.visibility = "hidden";
-    $temp.style.display = "none";
 }
 
 function showElement($temp) {
     $temp.style.visibility = "visible";
-    $temp.style.display = "inline";
 }
 

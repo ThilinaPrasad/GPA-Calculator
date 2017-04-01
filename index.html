@@ -8,6 +8,7 @@
 </head>
 <body  id="main">
 <!navigation bar>
+<img src="">
 <header>
     <ul>
         <li><a id="navNavigate" class="active" href="#home" onclick="if(isFull){openNav()}else{closeNav()}"><span style="font-size:12px;cursor:pointer" >&#9776; Navigate</span></a></li>
@@ -22,14 +23,15 @@
         <a href="#">About Developers</a>
     </div>
 
-
 </header>
 <!navigation bar>
 
 <section>
 <div class="wrapper">
     <form>
-        <select id="semDD" class="grades" onchange="if($semSelectDD.selectedIndex==1){hideElement($depSelectDD);}else{showElement($depSelectDD);}">
+        <table>
+            <tr>
+        <td width="160px"><select id="semDD" class="grades" onchange="if($semSelectDD.selectedIndex==1){hideElement($depSelectDD);}else{showElement($depSelectDD);}">
             <option  hidden>Select the Semester</option>
             <option value="1" >Semester 1</option>
             <option value="2">Semester 2</option>
@@ -39,8 +41,9 @@
             <option value="6">Semester 6</option>
             <option value="7">Semester 7</option>
             <option value="8">Semester 8</option>
-        </select>
-        <select id="depDD" style="visibility: hidden">
+        </select></td>
+
+        <td><select id="depDD" style="visibility: hidden">
             <option value="" selected hidden>Select the Department</option>
             <option>Electronic & Telecommunication Engineering</option>
             <option>Computer Science & Engineering</option>
@@ -52,11 +55,14 @@
             <option>Textile & Clothing Technology</option>
             <option>Earth Resource Engineering</option>
             <option>Transport & Logistic Management</option>
-        </select>
-        <br>
+        </select></td>
+            </tr>
+        </table>
 
-        <div id="sub1" class="subs"></div>
-        <select class="grades">
+        <table>
+    <tr>
+        <td><div id="sub1" class="subs"></div></td>
+        <td><select class="grades">
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -71,10 +77,11 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
-        <br>
-        <div id="sub2"></div>
-        <select>
+        </select></td>
+    </tr>
+    <tr>
+        <td><div id="sub2" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -89,10 +96,11 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
-        <br>
-        <div id="sub3"></div>
-        <select>
+        </select></td>
+    </tr>
+    <tr>
+        <td><div id="sub3" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -107,48 +115,32 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
-        <br>
-        <div id="sub4"></div>
-        <select>
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select>
+        </select></td>
+    </tr>
 
-        <br>
-        <div id="sub6"></div>
-        <select>
-        <option value="" selected hidden>Grade</option>
-        <option value="4.2">A+</option>
-        <option value="4.0">A</option>
-        <option value="3.7">A-</option>
-        <option value="3.3">B+</option>
-        <option value="3.0">B</option>
-        <option value="2.7">B-</option>
-        <option value="2.3">C+</option>
-        <option value="2.0">C</option>
-        <option value="1.5">C-</option>
-        <option value="1.0">D</option>
-        <option value="0.0">F</option>
-        <option value="0.0">I-we</option>
-        <option value="0.0">I-ca</option>
-    </select>
+    <tr>
+        <td><div id="sub4" class="subs"></div></td>
+        <td><select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select></td>
+    </tr>
 
-        <br>
-        <div id="sub7"></div>
-        <select>
+    <tr>
+        <td><div id="sub5" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -163,11 +155,12 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
+        </select></td>
+    </tr>
 
-        <br>
-        <div id="sub8"></div>
-        <select>
+    <tr>
+        <td><div id="sub6" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -182,11 +175,12 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
+        </select></td>
+    </tr>
 
-        <br>
-        <div id="sub9"></div>
-        <select>
+    <tr>
+        <td><div id="sub7" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -201,11 +195,12 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
+        </select></td>
+    </tr>
 
-        <br>
-        <div id="sub10"></div>
-        <select>
+    <tr>
+        <td><div id="sub8" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -220,10 +215,12 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
-        <br>
-        <div id="sub11"></div>
-        <select>
+        </select></td>
+    </tr>
+
+    <tr>
+        <td><div id="sub9" class="subs"></div></td>
+        <td><select>
             <option value="" selected hidden>Grade</option>
             <option value="4.2">A+</option>
             <option value="4.0">A</option>
@@ -238,7 +235,50 @@
             <option value="0.0">F</option>
             <option value="0.0">I-we</option>
             <option value="0.0">I-ca</option>
-        </select>
+        </select></td>
+    </tr>
+
+    <tr>
+        <td><div id="sub10" class="subs"></div></td>
+        <td><select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select></td>
+    </tr>
+
+    <tr>
+        <td><div id="sub11" class="subs"></div></td>
+        <td><select>
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select></td>
+    </tr>
+
+</table>
     </form>
     <input type="number" id="olderGPA">
     <input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()">
