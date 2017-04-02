@@ -127,23 +127,13 @@ li a.active {
     box-shadow:gray 10px 10px 15px;
 }
 
-select {
-    background-color: white;
-    width : auto;
-    height: 30px;
-    border-radius: 5px;
-    color: #800000;
-    border-color: #800000;
-    border-width: 3px;
-    font-weight: 700;
-}
+
 
 select:focus {
     outline-color: red;
 }
 
-.subs{
-    width:400px;
+select,.subs,.modCode,.modCredit{
     height:30px;
     border-radius: 5px;
     color: #800000;
@@ -155,12 +145,35 @@ select:focus {
     text-align: center;
 }
 
-.subs , .grade{
+select{
+    width: auto;
+}
+
+.subs{
+    width: 400px;
+}
+
+.modCode{
+    width:100px;
+}
+
+.modCredit{
+    width: 50px;
+}
+
+
+.subs , .grade,.modCode.modCredit{
     visibility: hidden;
 }
 
 table{
     margin: auto;
+}
+
+table th{
+    color: white;
+    font-size: large;
+    font-weight: 800;
 }
 
 #semDD{

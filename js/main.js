@@ -9,6 +9,8 @@ var $calc  = document.getElementById("calcBtn");                    // cal butto
 var $rst = document.getElementById("resetBtn");                     // reset button
 var $subGrade= document.getElementsByClassName('grade');            // subject grade drop downs
 var $subjects = document.getElementsByClassName('subs');            //subjects divs
+var $modCodes = document.getElementsByClassName('modCode');         // module code divs
+var $modCredits = document.getElementsByClassName('modCredit');         // Module credit  divs
 
 /*semester Drop Down On Change things here*/
 function semDDOnChange(){
@@ -36,7 +38,7 @@ function depDDOnChange(){
 
 /*test Function*/
 function sem(){
-        alert($subjects[6].innerText + " " +$subjects[6].value);
+        alert($modCodes[0].innerText+" "+$subjects[0].innerText + " " +$modCredits[0].innerText);
 }
 
 /* hide elements from web*/
@@ -65,26 +67,31 @@ function semesterDDStyle() {
 }
 
 /*add Subject for field*/
-function showSubject($fieldName,$gradeName,$subjectName,$credit){
-    $fieldName.innerText = $subjectName;
-    $fieldName.value = $credit;
-    $fieldName.style.visibility = 'visible';
+function showSubject($modCodeField,$subFieldName,$modCreditField,$gradeName,$modCod,$subjectName,$credit){
+    $modCodeField.innerText = $modCod;
+    $subFieldName.innerText = $subjectName;
+    $modCreditField.innerText= $credit;
+    $modCodeField.style.visibility= 'visible';
+    $subFieldName.style.visibility = 'visible';
+    $modCreditField.style.visibility='visible';
     $gradeName.style.visibility = 'visible';
 }
 
 /*remove field from web*/
-function hideSubject($fieldName,$gradeName){
-    $fieldName.style.visibility = 'hidden';
+function hideSubject($modCodeField,$subFieldName,$modCreditField,$gradeName){
+    $modCodeField.style.visibility='hidden';
+    $subFieldName.style.visibility = 'hidden';
+    $modCreditField.style.visibility = 'hidden';
     $gradeName.style.visibility = 'hidden';
 }
 
 /*data filling logic*/
-function fillDataLogic($subsData,$creditsData){
+function fillDataLogic($modCodeData,$subsData,$creditsData){
     for(var i=0;i<$subsData.length;i++){
-        showSubject($subjects[i],$subGrade[i],$subsData[i],$creditsData[i]);
+        showSubject($modCodes[i],$subjects[i],$modCredits[i],$subGrade[i],$modCodeData[i],$subsData[i],$creditsData[i]);
     }
     for(var j=0;j<=(11-$subsData.length);j++){
-        hideSubject($subjects[11-j],$subGrade[11-j]);
+        hideSubject($modCodes[11-j],$subjects[11-j],$modCredits[11-j],$subGrade[11-j]);
     }
 }
 
@@ -93,9 +100,10 @@ function fillSubjects() {
     var $sem = $semSelectDD.selectedIndex;
     var $dep = $depSelectDD.selectedIndex;
     if($sem==1){
+        var $modCodeData = ['MA1013','CS1032','ME1032','MT1022','CE1022','EE1012','EL1012'];
         var $subsData = ['Mathematics' , 'Programming Fundamentals','Mechanics',"Properties of Materials","Fluid Mechanics","Electrical Engineering","Language Skill Enhancement I"];
-        var $creditsData =['3','3','2','2','2','2','1'];
-        fillDataLogic($subsData,$creditsData);
+        var $creditsData =['3.0','3.0','2.0','2.0','2.0','2.0','1.0'];
+        fillDataLogic($modCodeData,$subsData,$creditsData);
     }else {
         switch ($dep) {
             case 0:
@@ -146,6 +154,9 @@ function gradeReset(){
 /* >>>>>>>>>>>>>>>>>>departments Subject Details<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 /*Electronic & Telecommunications Engineering */
+var $modCodeData;
+var $subsData;
+var $creditsData;
 function entc($sem){
     switch($sem) {
         case 0:alert("Invalid Input Situation !");break;
@@ -167,27 +178,31 @@ function cse($sem){
         case 1:break;
         case 2:
             /*semester 2 Subjects*/
-            var $subsData = ["Principal of Object Oriented Programming" , "Computer Architecture","Electronic Devices & Circuits","Numerical Methods for Computer Science","Theory of Electricity","Communication Skills","Introduction to Manufacturing Engineering"];
-            var $creditsData =['3','2.5','3','2','3','2','1.5','2.5'];
-            fillDataLogic($subsData,$creditsData);
+            $modCodeData = ['CS2012','CS2022','CS2052','EN1012','MA1032','EE2093','CS2952','ME1802'];
+            $subsData = ["Principal of Object Oriented Programming" ,'Data Structures & Algorithms', "Computer Architecture","Electronic Devices & Circuits","Numerical Methods for Computer Science","Theory of Electricity","Communication Skills","Introduction to Manufacturing Engineering"];
+            $creditsData =['3.0','2.5','3.0','2.0','3.0','2.0','1.5','2.5'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 3:
             /*semester 3 Subjects*/
-            var $subsData = ["Principle of Computer Communication","Operating Systems","Object Oriented Software Development","Digital Electronics","Aspect of Civil Engineering","Basic Engineering Thermodynamics","Graph Theory for Computing","Calculus for System Modeling"];
-            var $creditsData =['3','2.5','3','2.5','2','2','2','2'];
-            fillDataLogic($subsData,$creditsData);
+            $modCodeData = ['CS2032','CS2042','CS2062','EN2022','CE1822','ME1822','CS2150','MA2073'];
+            $subsData = ["Principle of Computer Communication","Operating Systems","Object Oriented Software Development","Digital Electronics","Aspect of Civil Engineering","Basic Engineering Thermodynamics","Graph Theory for Computing","Calculus for System Modeling"];
+            $creditsData =['3.0','2.5','3.0','2.5','2.0','2.0','2.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 4:
             /*semester 4 Subjects*/
-            var $subsData = ["Software Engineering","Computer Networks","Database Systems","Linear Algebra","Differential Equations & Applications","Signals & Systems","Humanities Elective I"];
-            var $creditsData =['3','3','3','2','2','2.5','2'];
-            fillDataLogic($subsData,$creditsData);
+            $modCodeData = ['CS3022','CS3032','CS3042','MA2033','MA2063','EN2062','DE1XXX'];
+            $subsData = ["Software Engineering","Computer Networks","Database Systems","Linear Algebra","Differential Equations & Applications","Signals & Systems","Humanities Elective I"];
+            $creditsData =['3.0','3.0','3.0','2.0','2.0','2.5','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 5:
             /*semester 5 Subjects*/
-            var $subsData = ["Software Engineering Project","Computer Security","Theory of Computing","Micro-Controllers & Applications","Business Economics & Financial Accounting","Applied Statistics","Software Architecture & Design","Advanced Networking","Programming Languages","Intelligent Systems","Image Processing"];
-            var $creditsData =['2','2','2','3','3','2','3','3','3','3','3'];
-            fillDataLogic($subsData,$creditsData);
+            $modCodeData = ['CS3202','CS3052','CS3062','CS3242','MN3042','MA3013','CS3212','CS3412','CS3512','CS3612','CS3712'];
+            $subsData = ["Software Engineering Project","Computer Security","Theory of Computing","Micro-Controllers & Applications","Business Economics & Financial Accounting","Applied Statistics","Software Architecture & Design","Advanced Networking","Programming Languages","Intelligent Systems","Image Processing"];
+            $creditsData =['2.0','2.0','2.0','3.0','3.0','2.0','3.0','3.0','3.0','3.0','3.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 6:/*semester 6 Subjects*/break;
         case 7:/*semester 7 Subjects*/break;
@@ -215,7 +230,13 @@ function ce($sem){
     switch($sem) {
         case 0:alert("Invalid Input Situation !");break;
         case 1:break;
-        case 2:/*semester 2 Subjects*/break;
+        case 2:
+            /*semester 2 Subjects*/
+            var $modCodeData = ['MA1023','CE1112','CE1122','CE1132','ME1812','EL1022','DE2XXX'];
+            var $subsData = ['Methods Of Mathematics','Structural Mechanics I','Fluid Mechanics II','Building Construction & Materials','Basic Thermal Science','Language Skill Enhancement II','Humanities Elective I'];
+            var $creditsData =['3.0','3.0','3.0','3.0','2.0','1.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
         case 3:/*semester 3 Subjects*/break;
         case 4:/*semester 4 Subjects*/break;
         case 5:/*semester 5 Subjects*/break;
