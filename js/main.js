@@ -11,22 +11,31 @@ var $subGrade= document.getElementsByClassName('grade');            // subject g
 var $subjects = document.getElementsByClassName('subs');            //subjects divs
 var $modCodes = document.getElementsByClassName('modCode');         // module code divs
 var $modCredits = document.getElementsByClassName('modCredit');         // Module credit  divs
-
+var $rows = document.getElementsByClassName('subRow');              // Module credit  divs
+var $func = document.getElementById("functional");                // Semester select DD
 /*semester Drop Down On Change things here*/
 function semDDOnChange(){
     fillSubjects();
     semesterDDStyle();
-    showElement($hiddenTable);
     showElement($oldGPA);
     showElement($calc);
     showElement($rst);
     gradeReset();
+
     if($semSelectDD.selectedIndex==1){
         hideElement($depSelectDD);
         $oldGPA.style.visibility='hidden';
+        showElement($hiddenTable);
+        $hiddenTable.style.display='table';
+        $func.style.opacity = '1';
     }else{
         showElement($depSelectDD);
         $oldGPA.style.visibility='visible';
+        if($depSelectDD.selectedIndex==0) {
+            document.getElementById('tableMaintitle').innerText = 'Select Your Department !';
+            $hiddenTable.style.display='none';
+            $func.style.opacity = '0';
+        }
     }
 }
 
@@ -34,6 +43,10 @@ function semDDOnChange(){
 function depDDOnChange(){
     fillSubjects();
     gradeReset();
+    showElement($hiddenTable);
+    document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
+    $hiddenTable.style.display='table';
+    $func.style.opacity = '1';
 }
 
 /*test Function*/
@@ -53,7 +66,11 @@ function showElement($temp) {
 
 /*semester selection style*/
 function semesterDDStyle() {
+    document.getElementsByClassName('wrapper')[0].style.height='auto';
+    document.getElementById('tableMaintitle').style.visibility = 'visible';
     $semSelectDD.style.margin = 'auto';
+    $semSelectDD.style.marginTop = "40%";
+    $depSelectDD.style.marginTop = "20%";
     $semSelectDD.style.backgroundColor = 'white';
     $semSelectDD.style.width = 'auto';
     $semSelectDD.style.height= '30px';
@@ -67,7 +84,8 @@ function semesterDDStyle() {
 }
 
 /*add Subject for field*/
-function showSubject($modCodeField,$subFieldName,$modCreditField,$gradeName,$modCod,$subjectName,$credit){
+function showSubject($row,$modCodeField,$subFieldName,$modCreditField,$gradeName,$modCod,$subjectName,$credit){
+    $row.style.display='table-row';
     $modCodeField.innerText = $modCod;
     $subFieldName.innerText = $subjectName;
     $modCreditField.innerText= $credit;
@@ -78,20 +96,17 @@ function showSubject($modCodeField,$subFieldName,$modCreditField,$gradeName,$mod
 }
 
 /*remove field from web*/
-function hideSubject($modCodeField,$subFieldName,$modCreditField,$gradeName){
-    $modCodeField.style.visibility='hidden';
-    $subFieldName.style.visibility = 'hidden';
-    $modCreditField.style.visibility = 'hidden';
-    $gradeName.style.visibility = 'hidden';
+function hideSubject($row){
+    $row.style.display='none';
 }
 
 /*data filling logic*/
 function fillDataLogic($modCodeData,$subsData,$creditsData){
     for(var i=0;i<$subsData.length;i++){
-        showSubject($modCodes[i],$subjects[i],$modCredits[i],$subGrade[i],$modCodeData[i],$subsData[i],$creditsData[i]);
+        showSubject($rows[i],$modCodes[i],$subjects[i],$modCredits[i],$subGrade[i],$modCodeData[i],$subsData[i],$creditsData[i]);
     }
     for(var j=0;j<=(11-$subsData.length);j++){
-        hideSubject($modCodes[11-j],$subjects[11-j],$modCredits[11-j],$subGrade[11-j]);
+        hideSubject($rows[11-j]);
     }
 }
 
@@ -104,6 +119,7 @@ function fillSubjects() {
         var $subsData = ['Mathematics' , 'Programming Fundamentals','Mechanics',"Properties of Materials","Fluid Mechanics","Electrical Engineering","Language Skill Enhancement I"];
         var $creditsData =['3.0','3.0','2.0','2.0','2.0','2.0','1.0'];
         fillDataLogic($modCodeData,$subsData,$creditsData);
+        $func.style.opacity = '1';
     }else {
         switch ($dep) {
             case 0:

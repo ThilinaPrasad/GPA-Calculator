@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>GPA Calculator</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="css/background.css">
 </head>
 <body  id="main">
+<div class="canvas-wrap">
+
+    <div class="canvas-content">
 <!navigation bar>
 <img src="">
 <header>
@@ -28,6 +31,7 @@
 
 <section>
 <div class="wrapper">
+
     <form>
         <table>
             <tr>
@@ -59,16 +63,17 @@
             </tr>
         </table>
 
+        <h2 align="center" id="tableMaintitle">Enter Your Module Grades below</h2>
         <table style="visibility: hidden" id="hiddenTable">
             <tr>
                 <th>Module Code</th>
-                <th>Module Name</th>
+                <th class="hide">Module Name</th>
                 <th>Credit</th>
                 <th>Grade</th>
             </tr>
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div class="subs"></div></td>
+        <td class="hide"><div class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -87,9 +92,9 @@
             <option value="0.0">I-ca</option>
         </select></td>
     </tr>
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -108,31 +113,9 @@
             <option value="0.0">I-ca</option>
         </select></td>
     </tr>
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
-
-    <tr>
-        <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -152,9 +135,31 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
+        <td><div class="modCredit"></div></td>
+        <td><select  class="grade">
+            <option value="" selected hidden>Grade</option>
+            <option value="4.2">A+</option>
+            <option value="4.0">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3.0">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2.0">C</option>
+            <option value="1.5">C-</option>
+            <option value="1.0">D</option>
+            <option value="0.0">F</option>
+            <option value="0.0">I-we</option>
+            <option value="0.0">I-ca</option>
+        </select></td>
+    </tr>
+
+    <tr class="subRow">
+        <td><div class="modCode"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select class="grade">
             <option value="" selected hidden>Grade</option>
@@ -174,9 +179,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select class="grade">
             <option value="" selected hidden>Grade</option>
@@ -196,9 +201,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div class="subs"></div></td>
+        <td class="hide"><div class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select class="grade">
             <option value="" selected hidden>Grade</option>
@@ -218,9 +223,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -240,9 +245,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -262,9 +267,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -284,9 +289,9 @@
         </select></td>
     </tr>
 
-    <tr>
+    <tr class="subRow">
         <td><div class="modCode"></div></td>
-        <td><div  class="subs"></div></td>
+        <td class="hide"><div  class="subs"></div></td>
         <td><div class="modCredit"></div></td>
         <td><select  class="grade">
             <option value="" selected hidden>Grade</option>
@@ -306,9 +311,9 @@
         </select></td>
     </tr>
 
-            <tr>
+            <tr class="subRow">
                 <td><div class="modCode"></div></td>
-                <td><div class="subs"></div></td>
+                <td class="hide"><div class="subs"></div></td>
                 <td><div class="modCredit"></div></td>
                 <td><select  class="grade">
                     <option value="" selected hidden>Grade</option>
@@ -329,14 +334,38 @@
             </tr>
 </table>
     </form>
-    <input type="number" id="olderGPA" style="visibility:hidden;" >
-    <input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()" style="visibility:hidden;" >
-    <input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;" >
+    <ul id="functional" align="center">
+        <li><input type="number" id="olderGPA" style="visibility:hidden;" placeholder="CGPA"></li>
+        <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()" style="visibility:hidden;" ></li>
+        <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;" ></li>
+    </ul>
+    <div id="sGPA"></div>
+    <div id="cGPA"></div>
+    <div id="oGPA"></div>
 </div>
 </section>
 
 <footer></footer>
+    </div>
+    <div id="canvas" class="gradient">
+    </div>
+</div>
 <script src="js/main.js"></script>
 <script src="js/style.js"></script>
+
+<!-- Main library -->
+<script src="js/background/three.min.js"></script>
+
+<!-- Helpers -->
+<script src="js/background/projector.js"></script>
+<script src="js/background/canvas-renderer.js"></script>
+
+<!-- Visualitzation adjustments -->
+<script src="js/background/3d-lines-animation.js"></script>
+
+<!-- Animated background color -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/background/color.js"></script>
+
 </body>
 </html>

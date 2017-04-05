@@ -1,8 +1,7 @@
-/*navigation bar*/
 html{
-    height: 80%;
+    height: auto;
 }
-body{height: 80%}
+/*navigation bar*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -125,6 +124,7 @@ li a.active {
     height: 80vh;
     background: -webkit-repeating-linear-gradient(-45deg,#800000,#B22222 6px);
     box-shadow:gray 10px 10px 15px;
+    transition:height 1s ease-in-out;
 }
 
 
@@ -166,6 +166,12 @@ select{
     visibility: hidden;
 }
 
+#tableMaintitle{
+    visibility: hidden;
+    color: white;
+}
+
+
 table{
     margin: auto;
 }
@@ -175,7 +181,9 @@ table th{
     font-size: large;
     font-weight: 800;
 }
-
+#hiddenTable{
+    display: none;
+}
 #semDD{
     margin-top: 225px;
     margin-left: 250px;
@@ -188,6 +196,72 @@ table th{
     border-radius: 50px;
     border-color: white;
     transition: margin-top 1s, margin 1s;
+}
+
+
+#functional {
+    opacity: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 5%;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+#functional li{
+    margin: auto;
+}
+
+input[type=button]{
+
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 2px 1px;
+    -webkit-transition-duration: 0.6s;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#calcBtn{
+    color: #4CAF50;
+    background-color: white;
+    border: solid 3px #4CAF50;
+}
+
+#resetBtn{
+    color:#B22222;
+    background-color: white;
+    border: solid 3px #B22222;
+}
+
+
+#calcBtn:hover{
+    background-color: #4CAF50;
+    color: white;
+    border-color: white;
+}
+
+#resetBtn:hover{
+    background-color:#B22222;
+    color: white;
+    border-color: white;
+}
+
+input[type=number]{
+    padding: 8px 16px;
+    text-align: center;
+    border: solid 3px #B22222;
+    color: #4CAF50;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 2px 1px;
+    border-radius: 30px;
+    width: 100px;
 }
 
 
@@ -211,6 +285,13 @@ table th{
         margin-top: 175px;
         padding: 0;
         border-width: 3px;
+    }
+    .hide{
+        display: none;
+
+    }
+    #functional li{
+        margin:auto;
     }
 }
 /*responsive*/
