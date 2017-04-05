@@ -6,346 +6,423 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/background.css">
 </head>
-<body  id="main">
+<body id="main">
 <div class="canvas-wrap">
-
     <div class="canvas-content">
-<!navigation bar>
-<img src="">
-<header>
-    <ul>
-        <li><a id="navNavigate" class="active" href="#home" onclick="if(isFull){openNav()}else{closeNav()}"><span style="font-size:12px;cursor:pointer" >&#9776; Navigate</span></a></li>
-        <li id="searcher"><form method="get" action="http://www.getgooglesearch.com/htmlcodes/searchg" id="navSearch"><input type="search" id="searchBar" placeholder="Search in Google"></form></li>
-        <li id="navLogo"><img src="img/navLogo.png"></li>
-    </ul>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="http://www.mrt.ac.lk/web/" target="_blank">University Of Moratuwa</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">About Developers</a>
-    </div>
+        <!navigation bar>
+        <img src="">
+        <header>
+            <ul>
+                <li><a id="navNavigate" class="active" href="#home"
+                       onclick="if(isFull){openNav()}else{closeNav()}"><span style="font-size:12px;cursor:pointer">&#9776; Navigate</span></a>
+                </li>
+                <li id="searcher">
+                    <form method="get" action="http://www.getgooglesearch.com/htmlcodes/searchg" id="navSearch"><input
+                            type="search" id="searchBar" placeholder="Search in Google"></form>
+                </li>
+                <li id="navLogo"><img src="img/navLogo.png"></li>
+            </ul>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="http://www.mrt.ac.lk/web/" target="_blank">University Of Moratuwa</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">About Developers</a>
+            </div>
 
-</header>
-<!navigation bar>
+        </header>
+        <!navigation bar>
 
-<section>
-<div class="wrapper">
+        <section>
+            <div class="wrapper">
 
-    <form>
-        <table>
-            <tr>
-        <td width="160px"><select id="semDD" onchange="semDDOnChange()">
-            <option  hidden>Select your Semester</option>
-            <option value="1" >Semester 1</option>
-            <option value="2">Semester 2</option>
-            <option value="3">Semester 3</option>
-            <option value="4">Semester 4</option>
-            <option value="5">Semester 5</option>
-            <option value="6">Semester 6</option>
-            <option value="7">Semester 7</option>
-            <option value="8">Semester 8</option>
-        </select></td>
+                <form>
+                    <table>
+                        <tr>
+                            <td width="160px"><select id="semDD" onchange="semDDOnChange()">
+                                <option hidden>Select your Semester</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select></td>
 
-        <td><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
-            <option value="" selected hidden>Select the Department</option>
-            <option>Electronic & Telecommunication Engineering</option>
-            <option>Computer Science & Engineering</option>
-            <option>Electrical Engineering</option>
-            <option>Civil Engineering</option>
-            <option>Mechanical Engineering</option>
-            <option>Chemical & Process Engineering</option>
-            <option>Material Science & Engineering</option>
-            <option>Textile & Clothing Technology</option>
-            <option>Earth Resource Engineering</option>
-            <option>Transport & Logistic Management</option>
-        </select></td>
-            </tr>
-        </table>
+                            <td><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
+                                <option value="" selected hidden>Select the Department</option>
+                                <option>Electronic & Telecommunication Engineering</option>
+                                <option>Computer Science & Engineering</option>
+                                <option>Electrical Engineering</option>
+                                <option>Civil Engineering</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Chemical & Process Engineering</option>
+                                <option>Material Science & Engineering</option>
+                                <option>Textile & Clothing Technology</option>
+                                <option>Earth Resource Engineering</option>
+                                <option>Transport & Logistic Management</option>
+                            </select></td>
+                        </tr>
+                    </table>
 
-        <h2 align="center" id="tableMaintitle">Enter Your Module Grades below</h2>
-        <table style="visibility: hidden" id="hiddenTable">
-            <tr>
-                <th>Module Code</th>
-                <th class="hide">Module Name</th>
-                <th>Credit</th>
-                <th>Grade</th>
-            </tr>
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                    <h2 align="center" id="tableMaintitle">Enter Your Module Grades below</h2>
+                    <table style="visibility: hidden" id="hiddenTable">
+                        <tr>
+                            <th>Module Code</th>
+                            <th class="hide">Module Name</th>
+                            <th>Credit</th>
+                            <th>Grade</th>
+                        </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-    <tr class="subRow">
-        <td><div class="modCode"></div></td>
-        <td class="hide"><div  class="subs"></div></td>
-        <td><div class="modCredit"></div></td>
-        <td><select  class="grade">
-            <option value="" selected hidden>Grade</option>
-            <option value="4.2">A+</option>
-            <option value="4.0">A</option>
-            <option value="3.7">A-</option>
-            <option value="3.3">B+</option>
-            <option value="3.0">B</option>
-            <option value="2.7">B-</option>
-            <option value="2.3">C+</option>
-            <option value="2.0">C</option>
-            <option value="1.5">C-</option>
-            <option value="1.0">D</option>
-            <option value="0.0">F</option>
-            <option value="0.0">I-we</option>
-            <option value="0.0">I-ca</option>
-        </select></td>
-    </tr>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
 
-            <tr class="subRow">
-                <td><div class="modCode"></div></td>
-                <td class="hide"><div class="subs"></div></td>
-                <td><div class="modCredit"></div></td>
-                <td><select  class="grade">
-                    <option value="" selected hidden>Grade</option>
-                    <option value="4.2">A+</option>
-                    <option value="4.0">A</option>
-                    <option value="3.7">A-</option>
-                    <option value="3.3">B+</option>
-                    <option value="3.0">B</option>
-                    <option value="2.7">B-</option>
-                    <option value="2.3">C+</option>
-                    <option value="2.0">C</option>
-                    <option value="1.5">C-</option>
-                    <option value="1.0">D</option>
-                    <option value="0.0">F</option>
-                    <option value="0.0">I-we</option>
-                    <option value="0.0">I-ca</option>
-                </select></td>
-            </tr>
-</table>
-    </form>
-    <ul id="functional" align="center">
-        <li><input type="number" id="olderGPA" style="visibility:hidden;" placeholder="CGPA"></li>
-        <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()" style="visibility:hidden;" ></li>
-        <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;" ></li>
-    </ul>
-    <div id="sGPA"></div>
-    <div id="cGPA"></div>
-    <div id="oGPA"></div>
-</div>
-</section>
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+                    </table>
+                </form>
+                <ul id="functional" align="center">
+                    <li><input type="number" id="olderGPA" style="visibility:hidden;" placeholder="CGPA"></li>
+                    <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()"
+                               style="visibility:hidden;"></li>
+                    <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;" onclick="location.href='index.html';"></li>
+                </ul>
+                <div id="sGPA"></div>
+                <div id="cGPA"></div>
+                <div id="oGPA"></div>
+            </div>
+        </section>
 
-<footer></footer>
+        <footer></footer>
     </div>
     <div id="canvas" class="gradient">
     </div>
