@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GPA Calculator</title>
+    <title>MORA GPA</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="icon/png">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/background.css">
 </head>
@@ -10,7 +11,11 @@
 <div class="canvas-wrap">
     <div class="canvas-content">
         <!navigation bar>
-        <img src="">
+        <ul class="headerLogo">
+            <li id="uniLogo"><img src="img/uniLogo.png"></li>
+            <li id="mainLogo"><img src="img/mainLogo.png"></li>
+            <li id="clock"><iframe src="clock.html" frameborder="0" width="180" height="180"></iframe></li>
+            </ul>
         <header>
             <ul>
                 <li><a id="navNavigate" class="active" href="#home"
@@ -35,11 +40,9 @@
 
         <section>
             <div class="wrapper">
-
                 <form>
-                    <table>
-                        <tr>
-                            <td width="160px"><select id="semDD" onchange="semDDOnChange()">
+                    <ul class="semdepSelect">
+                            <li id="ddSem"><select id="semDD" onchange="semDDOnChange()">
                                 <option hidden>Select your Semester</option>
                                 <option value="1">Semester 1</option>
                                 <option value="2">Semester 2</option>
@@ -49,9 +52,9 @@
                                 <option value="6">Semester 6</option>
                                 <option value="7">Semester 7</option>
                                 <option value="8">Semester 8</option>
-                            </select></td>
+                            </select></li>
 
-                            <td><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
+                            <li id="ddDep"><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
                                 <option value="" selected hidden>Select the Department</option>
                                 <option>Electronic & Telecommunication Engineering</option>
                                 <option>Computer Science & Engineering</option>
@@ -63,9 +66,8 @@
                                 <option>Textile & Clothing Technology</option>
                                 <option>Earth Resource Engineering</option>
                                 <option>Transport & Logistic Management</option>
-                            </select></td>
-                        </tr>
-                    </table>
+                            </select></li>
+                    </ul>
 
                     <h2 align="center" id="tableMaintitle">Enter Your Module Grades below</h2>
                     <table style="visibility: hidden" id="hiddenTable">

@@ -66,6 +66,7 @@ function showElement($temp) {
 
 /*semester selection style*/
 function semesterDDStyle() {
+    document.getElementsByClassName('semdepSelect')[0].style.left = '0';
     document.getElementsByClassName('wrapper')[0].style.height='auto';
     document.getElementById('tableMaintitle').style.visibility = 'visible';
     $semSelectDD.style.margin = 'auto';

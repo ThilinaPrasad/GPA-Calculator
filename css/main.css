@@ -1,3 +1,12 @@
+.headerLogo{
+    background-color: transparent;
+    margin: auto ;
+    border: none;
+}
+
+.headerLogo li{
+    margin: 30px auto;
+}
 /*navigation bar*/
 .sidenav {
     height: 100%;
@@ -36,16 +45,6 @@
 #main {
     transition: margin-left .5s;
     padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
 }
 
 ul {
@@ -260,10 +259,48 @@ input[type=number] {
     width: 100px;
 }
 
+.semdepSelect{
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: 8%;
+}
+
+.semdepSelect li{
+    margin: auto;
+}
+
 /*responsive*/
 @media screen and (max-width: 450px) {
+
+    #mainLogo{
+        margin: 15px auto;
+    }
+
+    #mainLogo img{
+        margin: auto;
+        width: 150px;
+        height: 75px;
+    }
+
+    #clock,#uniLogo{
+        display: none;
+    }
+
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
     ul {
         -webkit-flex-direction: column;
+    }
+
+    iframe{
+        display: none;
     }
 
     #navLogo {
@@ -292,6 +329,16 @@ input[type=number] {
     #functional li {
         margin: auto;
     }
+
+    .semdepSelect{
+        left: -6%;
+    }
+
+    #ddSem select,#ddDep select{
+        width: 200px;
+    }
+
 }
+
 
 /*responsive*/
