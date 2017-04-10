@@ -209,7 +209,7 @@ table th {
     margin: auto;
 }
 
-input[type=button] {
+input[type=button]{
 
     padding: 8px 16px;
     text-align: center;
@@ -339,6 +339,34 @@ input[type=number] {
     }
 
 }
+
+#sGPA,#oGPA,#cGPA{
+    padding: 8px 16px;
+    text-align: center;
+    border: solid 3px #4CAF50;
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    width: 100px;
+    height: 20px;
+    background-color: white;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+#results{
+    opacity: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+#results li{
+    margin: auto;
+}
+
 
 
 /*responsive*/

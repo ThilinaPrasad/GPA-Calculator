@@ -14,8 +14,10 @@
         <ul class="headerLogo">
             <li id="uniLogo"><img src="img/uniLogo.png"></li>
             <li id="mainLogo"><img src="img/mainLogo.png"></li>
-            <li id="clock"><iframe src="clock.html" frameborder="0" width="180" height="180"></iframe></li>
-            </ul>
+            <li id="clock">
+                <iframe src="clock.html" frameborder="0" width="180" height="180"></iframe>
+            </li>
+        </ul>
         <header>
             <ul>
                 <li><a id="navNavigate" class="active" href="#home"
@@ -42,31 +44,31 @@
             <div class="wrapper">
                 <form>
                     <ul class="semdepSelect">
-                            <li id="ddSem"><select id="semDD" onchange="semDDOnChange()">
-                                <option hidden>Select your Semester</option>
-                                <option value="1">Semester 1</option>
-                                <option value="2">Semester 2</option>
-                                <option value="3">Semester 3</option>
-                                <option value="4">Semester 4</option>
-                                <option value="5">Semester 5</option>
-                                <option value="6">Semester 6</option>
-                                <option value="7">Semester 7</option>
-                                <option value="8">Semester 8</option>
-                            </select></li>
+                        <li id="ddSem"><select id="semDD" onchange="semDDOnChange()">
+                            <option hidden>Select your Semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select></li>
 
-                            <li id="ddDep"><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
-                                <option value="" selected hidden>Select the Department</option>
-                                <option>Electronic & Telecommunication Engineering</option>
-                                <option>Computer Science & Engineering</option>
-                                <option>Electrical Engineering</option>
-                                <option>Civil Engineering</option>
-                                <option>Mechanical Engineering</option>
-                                <option>Chemical & Process Engineering</option>
-                                <option>Material Science & Engineering</option>
-                                <option>Textile & Clothing Technology</option>
-                                <option>Earth Resource Engineering</option>
-                                <option>Transport & Logistic Management</option>
-                            </select></li>
+                        <li id="ddDep"><select id="depDD" style="visibility: hidden" onchange="depDDOnChange()">
+                            <option value="" selected hidden>Select the Department</option>
+                            <option>Electronic & Telecommunication Engineering</option>
+                            <option>Computer Science & Engineering</option>
+                            <option>Electrical Engineering</option>
+                            <option>Civil Engineering</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Chemical & Process Engineering</option>
+                            <option>Material Science & Engineering</option>
+                            <option>Textile & Clothing Technology</option>
+                            <option>Earth Resource Engineering</option>
+                            <option>Transport & Logistic Management</option>
+                        </select></li>
                     </ul>
 
                     <h2 align="center" id="tableMaintitle">Enter Your Module Grades below</h2>
@@ -89,6 +91,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -116,6 +120,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -143,34 +149,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
-                                <option value="4.2">A+</option>
-                                <option value="4.0">A</option>
-                                <option value="3.7">A-</option>
-                                <option value="3.3">B+</option>
-                                <option value="3.0">B</option>
-                                <option value="2.7">B-</option>
-                                <option value="2.3">C+</option>
-                                <option value="2.0">C</option>
-                                <option value="1.5">C-</option>
-                                <option value="1.0">D</option>
-                                <option value="0.0">F</option>
-                                <option value="0.0">I-we</option>
-                                <option value="0.0">I-ca</option>
-                            </select></td>
-                        </tr>
-
-                        <tr class="subRow">
-                            <td>
-                                <div class="modCode"></div>
-                            </td>
-                            <td class="hide">
-                                <div class="subs"></div>
-                            </td>
-                            <td>
-                                <div class="modCredit"></div>
-                            </td>
-                            <td><select class="grade">
-                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -199,6 +179,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -227,6 +209,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -255,6 +239,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -283,6 +269,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -311,6 +299,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -339,6 +329,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -367,6 +359,8 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -395,6 +389,578 @@
                             </td>
                             <td><select class="grade">
                                 <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
+                                <option value="4.2">A+</option>
+                                <option value="4.0">A</option>
+                                <option value="3.7">A-</option>
+                                <option value="3.3">B+</option>
+                                <option value="3.0">B</option>
+                                <option value="2.7">B-</option>
+                                <option value="2.3">C+</option>
+                                <option value="2.0">C</option>
+                                <option value="1.5">C-</option>
+                                <option value="1.0">D</option>
+                                <option value="0.0">F</option>
+                                <option value="0.0">I-we</option>
+                                <option value="0.0">I-ca</option>
+                            </select></td>
+                        </tr>
+
+                        <tr class="subRow">
+                            <td>
+                                <div class="modCode"></div>
+                            </td>
+                            <td class="hide">
+                                <div class="subs"></div>
+                            </td>
+                            <td>
+                                <div class="modCredit"></div>
+                            </td>
+                            <td><select class="grade">
+                                <option value="" selected hidden>Grade</option>
+                                <option value="0">Not Elected</option>
+                                <option value="0">Non-GPA</option>
                                 <option value="4.2">A+</option>
                                 <option value="4.0">A</option>
                                 <option value="3.7">A-</option>
@@ -414,13 +980,39 @@
                 </form>
                 <ul id="functional" align="center">
                     <li><input type="number" id="olderGPA" style="visibility:hidden;" placeholder="CGPA"></li>
-                    <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="sem()"
+                    <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="displayResults()"
                                style="visibility:hidden;"></li>
-                    <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;" onclick="location.href='index.html';"></li>
+                    <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;"
+                               onclick="location.href='index.html';"></li>
                 </ul>
-                <div id="sGPA"></div>
-                <div id="cGPA"></div>
-                <div id="oGPA"></div>
+
+                <ul id="results">
+                    <li>
+                        <ul style="-webkit-flex-direction: column; background: transparent; border: none;">
+                            <li>SGPA</li>
+                            <li>
+                                <div id="sGPA"></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul style="-webkit-flex-direction: column; background: transparent; border: none;">
+                            <li>CGPA</li>
+                            <li>
+                                <div id="cGPA"></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul style="-webkit-flex-direction: column; background: transparent; border: none;">
+                            <li>OGPA</li>
+                            <li>
+                                <div id="oGPA"></div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
         </section>
 
