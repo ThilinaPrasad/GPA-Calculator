@@ -25,6 +25,7 @@ function semDDOnChange(){
     gradeReset();
     document.getElementById('results').style.opacity = '0';
     if($semSelectDD.selectedIndex==1){
+        document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
         hideElement($depSelectDD);
         $oldGPA.style.visibility='hidden';
         showElement($hiddenTable);
