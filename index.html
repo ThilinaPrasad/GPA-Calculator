@@ -12,8 +12,8 @@
     <div class="canvas-content">
         <!navigation bar>
         <ul class="headerLogo">
-            <li id="uniLogo"><img src="img/uniLogo.png"></li>
-            <li id="mainLogo"><img src="img/mainLogo.png"></li>
+            <li id="uniLogo"><a href="http://www.mrt.ac.lk/web/" target="_blank"><img src="img/uniLogo.png"></a></li>
+            <li id="mainLogo"><a href="index.html"><img src="img/mainLogo.png"></a></li>
             <li id="clock">
                 <iframe src="clock.html" frameborder="0" width="180" height="180"></iframe>
             </li>
@@ -24,17 +24,17 @@
                        onclick="if(isFull){openNav()}else{closeNav()}"><span style="font-size:12px;cursor:pointer">&#9776; Navigate</span></a>
                 </li>
                 <li id="searcher">
-                    <form method="get" action="http://www.getgooglesearch.com/htmlcodes/searchg" id="navSearch"><input
-                            type="search" id="searchBar" placeholder="Search in Google"></form>
+                    <form method="get" action="https://www.google.com/search" id="navSearch"><input
+                            type="search" id="searchBar" placeholder="Search in Google" name="q"></form>
                 </li>
                 <li id="navLogo"><img src="img/navLogo.png"></li>
             </ul>
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
                 <a href="http://www.mrt.ac.lk/web/" target="_blank">University Of Moratuwa</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">About Developers</a>
+                <a href="http://www.mrt.ac.lk/efac/">UOM E-Fac</a>
+                <a href="#footer-links" onclick="closeNav()">About Developer</a>
             </div>
 
         </header>
@@ -1016,7 +1016,20 @@
             </div>
         </section>
 
-        <footer></footer>
+        <footer>
+            <div id="visitor-counter" style="margin-top: 10px">
+            <label align="center">Visitors</label><br>
+                <img src="https://counter1.fcs.ovh/private/freecounterstat.php?c=wtplzdpq6j576peeqr5hpm2347ppjc6d" border="0" title="website hits counter" alt="website hits counter">
+            </div>
+            <div id="footer-links">
+                <a href="https://www.instagram.com/thilina.prashad/?hl=en" title="Instragram" target="_blank"><img src="img/footerIcons/ins.png" class="links"></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=15b639f7706f2d84" title="Gmail" target="_blank"><img src="img/footerIcons/email.png" class="links"></a>
+                <a href="https://www.linkedin.com/in/thilina-jayathilaka-32134911b/" title="LinkedIn" target="_blank"><img src="img/footerIcons/linked.png" class="links"></a>
+                <a href="https://www.facebook.com/thilina.prashad" title="Facebook" target="_blank"><img src="img/footerIcons/fb.png" class="links"></a>
+                <a href="https://github.com/ThilinaPrasad" title="Github" target="_blank"><img src="img/footerIcons/git.png" class="links"></a>
+            </div>
+            <a href="https://www.paypal.me/thilinaprasad" title="Send Donations for Host this Site" id="donate-btn" target="_blank"><img src="img/footerIcons/donate.png"></a>
+        </footer>
     </div>
     <div id="canvas" class="gradient">
     </div>

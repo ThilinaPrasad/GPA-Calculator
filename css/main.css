@@ -7,6 +7,11 @@
 .headerLogo li{
     margin: 30px auto;
 }
+#uniLogo a:hover , #mainLogo a:hover{
+    background: transparent;
+}
+
+
 /*navigation bar*/
 .sidenav {
     height: 100%;
@@ -270,9 +275,72 @@ input[type=number] {
     margin: auto;
 }
 
+#sGPA,#oGPA,#cGPA{
+    padding: 8px 16px;
+    text-align: center;
+    border: solid 3px #4CAF50;
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    width: 100px;
+    height: 20px;
+    background-color: white;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+#results{
+    opacity: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+}
+
+#results li{
+    margin: auto;
+}
+
+footer{
+    background: -webkit-repeating-linear-gradient(-45deg, #800000, #B22222 6px);
+    width: auto;
+    height: auto;
+    border: 3px white solid;
+    border-radius: 50px 50px 0 0;
+    margin-bottom: 0;
+}
+
+
+
+
+.links{
+    width: 32px;
+    height: 32px;
+    transition-duration: 0.3s ;
+    transition-timing-function: ease-in;
+    border-radius: 50%;
+    border: 2px transparent solid;
+    margin: auto;
+}
+
+.links:hover{
+    border-color: white;
+    cursor: pointer;
+}
+
+#donate-btn img{
+    border-radius: 28px;
+    padding: 5px 10px;
+    border: 2px transparent solid;
+}
+
+#donate-btn img:hover{
+    border-color: white;
+}
+
 /*responsive*/
 @media screen and (max-width: 450px) {
-
     #mainLogo{
         margin: 15px auto;
     }
@@ -338,35 +406,26 @@ input[type=number] {
         width: 200px;
     }
 
+    #footer-links img{
+        width: 20px;
+        height: 20px;
+    }
+    .links{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border-color: transparent;
+    }
+    .links:hover{
+        border-color: white;
+        cursor: pointer;
+    }
+
+    #donate-btn img{
+        width: 72px;
+        height: 24px;
+        padding: 2px 5px;
+    }
 }
-
-#sGPA,#oGPA,#cGPA{
-    padding: 8px 16px;
-    text-align: center;
-    border: solid 3px #4CAF50;
-    color: #4CAF50;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 30px;
-    width: 100px;
-    height: 20px;
-    background-color: white;
-    margin: 0;
-    margin-bottom: 30px;
-}
-
-#results{
-    opacity: 0;
-    list-style-type: none;
-    overflow: hidden;
-    background-color: transparent;
-    border: none;
-}
-
-#results li{
-    margin: auto;
-}
-
-
 
 /*responsive*/
