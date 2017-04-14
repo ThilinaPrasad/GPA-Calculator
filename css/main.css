@@ -333,6 +333,8 @@ footer{
     border-radius: 28px;
     padding: 5px 10px;
     border: 2px transparent solid;
+    transition-duration: 0.3s ;
+    transition-timing-function: ease-in;
 }
 
 #donate-btn img:hover{

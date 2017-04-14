@@ -122,9 +122,9 @@ function fillSubjects() {
     var $sem = $semSelectDD.selectedIndex;
     var $dep = $depSelectDD.selectedIndex;
     if($sem==1){
-        var $modCodeData = ['MA1013','CS1032','ME1032','MT1022','CE1022','EE1012','EL1012'];
-        var $subsData = ['Mathematics' , 'Programming Fundamentals','Mechanics',"Properties of Materials","Fluid Mechanics","Electrical Engineering","Language Skill Enhancement I"];
-        var $creditsData =['3.0','3.0','2.0','2.0','2.0','2.0','1.0'];
+        var $modCodeData = ['MA1013','CS1032','ME1032','MT1022','CE1022','EE1012','EL1012','MN1012'];
+        var $subsData = ['Mathematics' , 'Programming Fundamentals','Mechanics',"Properties of Materials","Fluid Mechanics","Electrical Engineering","Language Skill Enhancement I",'Engineering in Context'];
+        var $creditsData =['3.0','3.0','2.0','2.0','2.0','2.0','1.0','1.0'];
         fillDataLogic($modCodeData,$subsData,$creditsData);
         $func.style.opacity = '1';
     }else {
@@ -297,17 +297,53 @@ function ce($sem){
         case 1:break;
         case 2:
             /*semester 2 Subjects*/
-            var $modCodeData = ['MA1023','CE1112','CE1122','CE1132','ME1812','EL1022','DE2XXX'];
-            var $subsData = ['Methods Of Mathematics','Structural Mechanics I','Fluid Mechanics II','Building Construction & Materials','Basic Thermal Science','Language Skill Enhancement II','Humanities Elective I'];
-            var $creditsData =['3.0','3.0','3.0','3.0','2.0','1.0','2.0'];
+            $modCodeData = ['MA1023','CE1112','CE1122','CE1132','ME1812','EL1022','DE2XXX','CS2260','CE2260','MN1030'];
+            $subsData = ['Methods Of Mathematics','Structural Mechanics I','Fluid Mechanics II','Building Construction & Materials','Basic Thermal Science','Language Skill Enhancement II','Humanities Elective I','Visual Programming & Applications','Building Design Process & Applications','Entrepreneurship Skill Development'];
+            $creditsData =['3.0','3.0','3.0','3.0','2.0','1.0','2.0','2.0','2.0','1.0'];
             fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
-        case 3:/*semester 3 Subjects*/break;
-        case 4:/*semester 4 Subjects*/break;
-        case 5:/*semester 5 Subjects*/break;
-        case 6:/*semester 6 Subjects*/break;
-        case 7:/*semester 7 Subjects*/break;
-        case 8:/*semester 8 Subjects*/break;
+        case 3:
+            /*semester 3 Subjects*/
+            $modCodeData = ['MA2013','MA2023','CE2013','CE2022','CE2032','CE2042','CE2052','CE2062','MN1030'];
+            $subsData = ['Differential Equations','Calculus','Structural Mechanics II','Design of Steel Structures','Hydraulic Engineering I','Soil Mechanics & Geology I','Construction Planning & Cost Estimating','Surveying I','Entrepreneurship Skill Development'];
+            $creditsData =['2.0','2.0','3.0','3.0','3.0','3.0','3.0','3.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 4:
+            /*semester 4 Subjects*/
+            $modCodeData = ['MA2033','MA3013','CE2113','CE2122','CE3012','CE2132','CE2142','DE2XXX','MN2010'];
+            $subsData = ['Linear Algebra','Applied Statistics','Structural Analysis I','Design of Concrete Structures I','Hydraulic Engineering II','Soil Mechanics & Geology II','Surveying II','Humanities Electives II','Entrepreneurial Leadership'];
+            $creditsData =['2.0','2.0','3.0','3.0','3.0','3.0','3.0','2.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 5:
+            /*semester 5 Subjects*/
+            $modCodeData = ['CE3112','CE3122','CE3132','CE3142','CE3152','CE3162','MN3042','MN3010'];
+            $subsData = ['Structural Analysis II','Design of Masonry & Timber Structures','Geotechnical Engineering','Construction Management','Fundamentals of Environmental Engineering','Fundamentals of Transportation Engineering','Business Economics & Financial Accounting','Multidisciplinary Design,Innovation & Venture Creation'];
+            $creditsData =['3.0','3.0','3.0','3.0','2.0','2.0','3.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 6:
+            /*semester 6 Subjects*/
+            $modCodeData = ['CE4012','CE4022','CE4032','CE4902','CE4922'];
+            $subsData = ['Design of Concrete Structures II','Hydraulic Design','Geotechnical Design','Communication Skills for Projects','Research Project'];
+            $creditsData =['3.0','3.0','3.0','2.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 7:
+            /*semester 7 Subjects*/
+            $modCodeData = ['CE4042','CE4052','CE4912','CE4922','CE4312','CE4322','CE4332','CE4342','CE4352','MN3020','MN4900'];
+            $subsData = ['Highway Engineering','Environmental Engineering','Comprehensive Design Project','Research Project','Building Engineering','Irrigation Engineering','Remote Sensing & GIS','Construction Technology','Traffic Engineering & Planning','Entrepreneurship Business Basics','Professional Ethics'];
+            $creditsData =['3.0','3.0','2.0','2.0','3.0','3.0','3.0','3.0','3.0','3.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 8:
+            /*semester 8 Subjects*/
+            $modCodeData = ['CE4112','CE4123','CE4912','CE4922','CE4412','CE4422','CE4432','CE4442','CE4452','CE4472','CE4482','CE4492','CE4502','CE4522','CE4532','CE4542','CE4552','CE4562','MN4010'];
+            $subsData = ['Management Skill Development','Engineering Economics','Comprehensive Design Project','Research Project','Bridge Engineering','Advanced Structural Engineering & Design','Design of Large Structures','Computational Mechanics','Coastal & Port Engineering','Environmental Geotechnics','Computational Geotechnical Engineering','Project Management','Management Information Systems','Sustainable Design & Construction','Highway Constructions & Maintenance Management','Analysis & Design of Transportation Systems','Water & Wastewater Treatment','Environmental Impact Assessment','Business Plan Development'];
+            $creditsData =['2.0','2.0','3.0','1.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','3.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
     }
 }
 
@@ -316,10 +352,30 @@ function me($sem){
     switch($sem) {
         case 0:alert("Invalid Input Situation !");break;
         case 1:break;
-        case 2:/*semester 2 Subjects*/break;
-        case 3:/*semester 3 Subjects*/break;
-        case 4:/*semester 4 Subjects*/break;
-        case 5:/*semester 5 Subjects*/break;
+        case 2:
+            /*semester 2 Subjects*/
+            $modCodeData = ['ME1100','ME1090','ME1052','ME1070','ME2040','EL1022','EN1802','MA1023','MT1812','MN1030'];
+            $subsData = ['Mechanics of Materials I','Engineering Drawing & Computer Aided Modeling','Fundamentals of Engineering Thermodynamics','Manufacturing Technology','Fundamentals of Mechatronics','Language Skill Enhancement II','Basic Electronics','Methods of Mathematics','Engineering Materials','Entrepreneurship Skill Development'];
+            $creditsData =['2.0','3.0','3.0','2.5','2.0','2.0','1.0','2.0','3.0','2.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 3:
+            /*semester 3 Subjects*/
+            $modCodeData = ['ME2023','ME2092','EE2803','EN2852','MA2013','MA2023','ME2260','CS2882','MN1030'];
+            $subsData = ['Manufacturing Engineering','Mechanics of Machines I','Applied Electricity','Applied Electronics','Differential Equations','Calculus','Embedded Systems','Object Oriented Programming Using C++','Entrepreneurship Skill Development'];
+            $creditsData =['4.0','4.0','2.0','2.0','2.0','2.0','3.0','3.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 4:
+            /*semester 4 Subjects*/
+            $modCodeData = ['ME2050','ME2060','ME2160','ME2170','ME2080','ME2280','MA2033','ME2920','CH2803','MA2053','MN2010'];
+            $subsData = ['Mechanics of Machines II','Mechanics of Materials II','Introduction to Automotive Engineering','Manufacturing Engineering II','Design of Machine Elements','Sensors/Actuators & Smart Systems','Linear Algebra','Social Community Project-Mechatronics','Process Engineering','Graph Theory','Entrepreneurial Leadership'];
+            $creditsData =['3.0','4.0','2.0','4.0','3.0','3.0','2.0','2.0','2.0','2.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 5:
+            /*semester 5 Subjects*/
+            break;
         case 6:/*semester 6 Subjects*/break;
         case 7:/*semester 7 Subjects*/break;
         case 8:/*semester 8 Subjects*/break;
@@ -438,8 +494,6 @@ function displayResults() {
             break;
         case 2:                            //Sem 2
             multifyCredit = 15.0;
-            totEarnCredit += oldCGPA*multifyCredit;
-            totSemCredit += multifyCredit;
             break;
         case 3:                            //Sem 3
             switch(dep){
@@ -448,10 +502,10 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 36.5;
-                    totEarnCredit += oldCGPA*multifyCredit;
-                    totSemCredit += multifyCredit;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 32.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -467,10 +521,10 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 52.5;
-                    totEarnCredit += oldCGPA*multifyCredit;
-                    totSemCredit += multifyCredit;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 54.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -486,10 +540,10 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 70.5;
-                    totEarnCredit += oldCGPA*multifyCredit;
-                    totSemCredit += multifyCredit;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 77.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -505,10 +559,10 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 89.5;
-                    totEarnCredit += oldCGPA*multifyCredit;
-                    totSemCredit += multifyCredit;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 96.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -523,9 +577,11 @@ function displayResults() {
                 case 1: break;          //ENTC
                 case 2: break;          //CSE
                 case 3:
-                    97.5
+                    multifyCredit =97.5;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 106.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -541,10 +597,10 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 117.5;
-                    totEarnCredit += oldCGPA*multifyCredit;
-                    totSemCredit += multifyCredit;
                     break;          //EE
-                case 4: break;          //CE
+                case 4:
+                    multifyCredit = 123.0;
+                    break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
                 case 7: break;          //MA
@@ -554,6 +610,10 @@ function displayResults() {
             }
             break;
     }
+
+    //alert(oldCGPA);
+    totEarnCredit += oldCGPA*multifyCredit;
+    totSemCredit += multifyCredit;
     temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
     $cGPA.innerText = temp;
     $oGPA.innerText = temp;
