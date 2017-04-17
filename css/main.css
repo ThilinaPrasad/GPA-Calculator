@@ -163,8 +163,12 @@ select {
     width: 50px;
 }
 
-.subs, .grade, .modCode.modCredit {
+.subs, .grade, .modCode , .modCredit , .modType{
     visibility: hidden;
+}
+
+.modType option{
+    text-align: center;
 }
 
 #tableMaintitle {
@@ -275,7 +279,7 @@ input[type=number] {
     margin: auto;
 }
 
-#sGPA,#oGPA,#cGPA{
+#sGPA,#oGPA,#cGPA,#NGPACredits{
     padding: 8px 16px;
     text-align: center;
     border: solid 3px #4CAF50;

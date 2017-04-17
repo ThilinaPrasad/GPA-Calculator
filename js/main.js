@@ -11,6 +11,7 @@ var $subGrade= document.getElementsByClassName('grade');            // subject g
 var $subjects = document.getElementsByClassName('subs');            //subjects divs
 var $modCodes = document.getElementsByClassName('modCode');         // module code divs
 var $modCredits = document.getElementsByClassName('modCredit');         // Module credit  divs
+var $modTypes = document.getElementsByClassName('modType');         // Module Type  divs
 var $rows = document.getElementsByClassName('subRow');              // Module credit  divs
 var $func = document.getElementById("functional");                // Semester select DD
 var $displayedItems = 0;
@@ -22,7 +23,7 @@ function semDDOnChange(){
     showElement($oldGPA);
     showElement($calc);
     showElement($rst);
-    gradeReset();
+    ddReset();
     document.getElementById('results').style.opacity = '0';
     if($semSelectDD.selectedIndex==1){
         document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
@@ -45,12 +46,20 @@ function semDDOnChange(){
 /*department Drop Down On Change things here*/
 function depDDOnChange(){
     fillSubjects();
-    gradeReset();
+    ddReset();
     showElement($hiddenTable);
     document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
     $hiddenTable.style.display='table';
     $func.style.opacity = '1';
     document.getElementById('results').style.opacity = '0';
+}
+
+function resetBtnOnclick() {
+    location.href='index.html';
+    totEarnCredit =0;
+    totSemCredit =0;
+    totEarnNGPACredit =0;
+    ddReset();
 }
 
 /*test Function*/
@@ -89,7 +98,7 @@ function semesterDDStyle() {
 }
 
 /*add Subject for field*/
-function showSubject($row,$modCodeField,$subFieldName,$modCreditField,$gradeName,$modCod,$subjectName,$credit){
+function showSubject($row,$modCodeField,$subFieldName,$modCreditField,$modTypeField,$gradeName,$modCod,$subjectName,$credit){
     $row.style.display='table-row';
     $modCodeField.innerText = $modCod;
     $subFieldName.innerText = $subjectName;
@@ -98,6 +107,8 @@ function showSubject($row,$modCodeField,$subFieldName,$modCreditField,$gradeName
     $subFieldName.style.visibility = 'visible';
     $modCreditField.style.visibility='visible';
     $gradeName.style.visibility = 'visible';
+    $modTypeField.style.visibility = 'visible';
+
 }
 
 /*remove field from web*/
@@ -109,7 +120,7 @@ function hideSubject($row){
 function fillDataLogic($modCodeData,$subsData,$creditsData){
     $displayedItems = 0;
     for(var i=0;i<$subsData.length;i++){
-        showSubject($rows[i],$modCodes[i],$subjects[i],$modCredits[i],$subGrade[i],$modCodeData[i],$subsData[i],$creditsData[i]);
+        showSubject($rows[i],$modCodes[i],$subjects[i],$modCredits[i],$modTypes[i],$subGrade[i],$modCodeData[i],$subsData[i],$creditsData[i]);
         $displayedItems++;
     }
     for(var j=0;j<=(29-$subsData.length);j++){
@@ -166,9 +177,10 @@ function fillSubjects() {
 }
 
 /*Reset the grade drop downs*/
-function gradeReset(){
+function ddReset(){
     for(var i=0;i<12;i++){
         $subGrade[i].selectedIndex = 0;
+        $modTypes[i].selectedIndex=0;
     }
 }
 
@@ -462,29 +474,51 @@ function tlm($sem){
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Calculate <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 var totEarnCredit = 0;
 var totSemCredit = 0;
+var totEarnNGPACredit = 0;
+
+var $cGPA = document.getElementById('cGPA');
+var $oGPA = document.getElementById('oGPA');
+var resultdisplay;
 
 function sGPALogic() {
     totSemCredit = 0;
     totEarnCredit = 0;
+    var typeTemp;
     for (var i = 0; i < $displayedItems; i++) {
-        totEarnCredit += (parseFloat($modCredits[i].innerHTML)*parseFloat($subGrade[i].value));
-        totSemCredit += parseFloat($modCredits[i].innerHTML);
+        typeTemp =$modTypes[i].selectedIndex;
+        if(typeTemp==0) {
+            if($subGrade[i].selectedIndex==0){
+                alert("Please Enter Grade for "+$modCodes[i].innerText);
+                resultdisplay = '0';
+                break;
+            }
+            else {
+                totEarnCredit += (parseFloat($modCredits[i].innerHTML) * parseFloat($subGrade[i].value));
+                totSemCredit += parseFloat($modCredits[i].innerHTML);
+            }
+        }else if(typeTemp==1) {
+            totEarnNGPACredit += (parseFloat($modCredits[i].innerHTML));
+        }else{
+            continue;
+        }
+        resultdisplay ='1';
     }
     return (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
 }
 
-var $cGPA = document.getElementById('cGPA');
-var $oGPA = document.getElementById('oGPA');
-
 function displayResults() {
+    totEarnCredit = 0;
+    totSemCredit = 0;
+    totEarnNGPACredit = 0;
     var oldCGPA = parseFloat($oldGPA.value);
     var temp = sGPALogic();
     var sem = $semSelectDD.selectedIndex;
     var dep = $depSelectDD.selectedIndex;
-    alert(totEarnCredit.toString()+"   "+ totSemCredit.toString());
-    document.getElementById('results').style.opacity = '1';
-    document.getElementById('sGPA').innerText = temp;
     var multifyCredit = 0;
+    //alert(sem.toString());
+    document.getElementById('results').style.opacity = resultdisplay;
+    document.getElementById('sGPA').innerText = temp;
+    document.getElementById('NGPACredits').innerText = totEarnNGPACredit.toString();
 
     switch (sem){
         case 0: break;                     //Nothing
@@ -494,6 +528,11 @@ function displayResults() {
             break;
         case 2:                            //Sem 2
             multifyCredit = 15.0;
+            totEarnCredit += oldCGPA*multifyCredit;
+            totSemCredit += multifyCredit;
+            temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+            $cGPA.innerText = temp;
+            $oGPA.innerText = temp;
             break;
         case 3:                            //Sem 3
             switch(dep){
@@ -502,9 +541,19 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 36.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 32.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -521,9 +570,19 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 52.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 54.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -534,15 +593,25 @@ function displayResults() {
             }
             break;
         case 5:                            //Sem 5
-            switch($depSelectDD.selectedIndex){
+            switch(dep){
                 case 0: break;          //Do Nothing
                 case 1: break;          //ENTC
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 70.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 77.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -559,9 +628,19 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 89.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 96.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -578,9 +657,19 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit =97.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 106.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -597,9 +686,19 @@ function displayResults() {
                 case 2: break;          //CSE
                 case 3:
                     multifyCredit = 117.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //EE
                 case 4:
                     multifyCredit = 123.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
                     break;          //CE
                 case 5: break;          //ME
                 case 6: break;          //CH
@@ -612,9 +711,4 @@ function displayResults() {
     }
 
     //alert(oldCGPA);
-    totEarnCredit += oldCGPA*multifyCredit;
-    totSemCredit += multifyCredit;
-    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
-    $cGPA.innerText = temp;
-    $oGPA.innerText = temp;
 }
