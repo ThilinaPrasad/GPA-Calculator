@@ -26,7 +26,7 @@ function semDDOnChange(){
     ddReset();
     document.getElementById('results').style.opacity = '0';
     if($semSelectDD.selectedIndex==1){
-        document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
+        document.getElementById('tableMaintitle').innerText='Enter Your Module Grades Below';
         hideElement($depSelectDD);
         $oldGPA.style.visibility='hidden';
         showElement($hiddenTable);
@@ -48,7 +48,7 @@ function depDDOnChange(){
     fillSubjects();
     ddReset();
     showElement($hiddenTable);
-    document.getElementById('tableMaintitle').innerText='Enter Your Module Grades below';
+    document.getElementById('tableMaintitle').innerText='Enter Your Module Grades Below';
     $hiddenTable.style.display='table';
     $func.style.opacity = '1';
     document.getElementById('results').style.opacity = '0';
