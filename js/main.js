@@ -439,15 +439,57 @@ function ch($sem){
     switch($sem) {
         case 0:alert("Invalid Input Situation !");break;
         case 1:break;
-        case 2:/*semester 2 Subjects*/break;
-        case 3:/*semester 3 Subjects*/break;
-        case 4:/*semester 4 Subjects*/break;
-        case 5:/*semester 5 Subjects*/break;
-        case 6:/*semester 6 Subjects*/break;
-        case 7:/*semester 7 Subjects*/break;
-        case 8:/*semester 8 Subjects*/break;
+        case 2:
+            /*semester 2 Subjects*/
+            $modCodeData = ['CH1040','CH1033','CH1050','MT2802','ME1090','MA1023','EN1802 ','EL1022','DE2XXX','MN1030'];
+            $subsData = ['Chemistry for Engineers','Process Engineering Fundamentals','Fundamentals of Engineering Thermodynamics','Material Science','Engineering Drawing & Computer Aided Modelling','Methods of Mathematics','Basic Electronics','Language Skill Enhancement II','Humanities Elective I','Entrepreneurship Skill Development'];
+            $creditsData =['2.5','3.0','2.5','2.5','3.0','3.0','2.0','1.0','2.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 3:
+            /*semester 3 Subjects*/
+            $modCodeData = ['CH2100','CH2090','CH2120','CH2130','CH2140','MA2013','MA2023','MN1030'];
+            $subsData = ['Fluid Dynamics','Chemical Kinetics and Thermodynamics','Biological Science Fundamentals','Polymer Science and Technology ','Environmental Science and Technology','Differential Equations','Calculus','Entrepreneurship Skill Development'];
+            $creditsData =['3.5','3.5','2.5','2.5','2.5','2.0','2.0','1.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 4:
+            /*semester 4 Subjects*/
+            $modCodeData = ['CH2023','CH2030','CH2013','CH2110','MA2033','MA3023','DE2XXX','MN2010'];
+            $subsData = ['Unit Operations','Particle Technology','Heat and Mass Transfer','Fuel Science and Combustion Technology ','Linear Algebra','Numerical Methods','Humanities Elective II','Entrepreneurial Leadership'];
+            $creditsData =['4.0','3.5','4.0','3.5','2.0','2.0','2.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 5:
+            /*semester 5 Subjects*/
+            $modCodeData = ['CH3143','CH3070','CH3040','MN3052','MN3042','MA3013','MN3010'];
+            $subsData = ['Reactor Engineering','Plant and Equipment Design I','Energy Efficiency and Conservation','Plant Safety and Loss Prevention','Industrial Management & Marketing','Business Economics & Financial Accounting','Applied Statistics','Multidisciplinary Design,Innovation and Venture Creation'];
+            $creditsData =['3.5','4.5','2.5','2.5','3.0','3.0','2.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 6:
+            /*semester 6 Subjects*/
+            $modCodeData = ['CH3200','CH3080','CH2953','CH3900'];
+            $subsData = ['Chemical Process Design','Computer Aided Chemical Engineering','Technical Report Writing and Presentation Skills','Research Methodology'];
+            $creditsData =['2.0','3.0','3.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 7:
+            /*semester 7 Subjects*/
+            $modCodeData = ['CH4203','CH4060','CH4050','CH3013','CH4071','MN4022','CH4213','CH4223','CH4233','ER4810','CH4350','MN4062','MA4023','MN4030','MN3020','MN4150'];
+            $subsData = ['Comprehensive Design Project I','Process Modelling & Simulation','Plant and Equipment Design II','Unit Operations II','Research Project','Engineering Economics','Environmental Engineering and Management','Food and Bio Processing','Polymer Processing Operations','Petroleum Geology','Upstream Processing of Crude Petroleum','Organization Behaviour & Management','Operational Research','Strategic Enterprise Management','Entrepreneurship Business Basics','Project Management'];
+            $creditsData =['3.0','2.5','3.5','4.0','2.0','2.0','4.0','4.0','4.0','2.0','2.0','2.0','3.0','2.0','3.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
+        case 8:
+            /*semester 8 Subjects*/
+            $modCodeData = ['CH4160','CH4173','MN4900','CH4323','CH4253','CH4303','CH4273','CH4283','CH4313','CH4330','CH4340','CH4360','CH4370','MN4122','MN4042','MN4112','MN4072','MN4170','MN4010','MN4013','MN4800'];
+            $subsData = ['Comprehensive Design Project II','Process Dynamics and Control','Professional Ethics','Clean Technology','Renewable Energy Engineering','Polymer Engineering and Mould Design','Design of Polymer Products','Food Engineering and Hygienic Plant Design','Biochemical Engineering','Process Design and Integration','Natural Resource Process Engineering','Downstream Processing of Oil,Gas & Petrochemicals','Petroleum Process Operations, Economics, and Law','Human Resource Management and Industrial Relations','Technology Management','Production and Operations Management','Small Business Management & EntrepreneurshiP','Global Entrepreneurship','Business Plan Development','Linear Models and Multivariate Statistics','Supply Chain Management'];
+            $creditsData =['5.0','4.0','1.0','4.0','4.0','4.0','4.0','4.0','4.0','4.0','4.0','4.0','4.0','2.0','2.0','2.0','2.0','2.0','2.0','3.0','2.0'];
+            fillDataLogic($modCodeData,$subsData,$creditsData);
+            break;
     }
-}
+} //Done
 
 /*Material Science & Engineering*/
 function ma($sem){
@@ -610,7 +652,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 36.5;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
@@ -653,7 +702,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 55.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
@@ -696,7 +752,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 76.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
@@ -739,7 +802,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 95.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
@@ -782,7 +852,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 100.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
@@ -825,7 +902,14 @@ function displayResults() {
                     $cGPA.innerText = temp;
                     $oGPA.innerText = temp;
                     break;          //ME
-                case 6: break;          //CH
+                case 6:
+                    multifyCredit = 121.0;
+                    totEarnCredit += oldCGPA*multifyCredit;
+                    totSemCredit += multifyCredit;
+                    temp = (Math.round(((totEarnCredit/totSemCredit)*100))/100).toString();
+                    $cGPA.innerText = temp;
+                    $oGPA.innerText = temp;
+                    break;          //CH
                 case 7: break;          //MA
                 case 8: break;          //TM
                 case 9: break;          //EM
