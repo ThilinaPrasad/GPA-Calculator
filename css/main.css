@@ -429,9 +429,6 @@ footer{
         height: 75px;
     }
 
-    .wrapper{
-        height: auto;
-    }
 
     #clock,#uniLogo{
         display: none;
@@ -480,9 +477,13 @@ footer{
         margin: auto;
     }
 
-    .semdepSelect{
-        left: -6%;
+    .wrapper{
+        height: 150vh;
     }
+
+   #semDD{
+       margin-left: -30px;
+   }
 
     #ddSem select,#ddDep select{
         width: 200px;
