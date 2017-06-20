@@ -176,6 +176,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
+    line-height: 145%;
 }
 
 select:focus {
@@ -426,6 +427,10 @@ footer{
         margin: auto;
         width: 150px;
         height: 75px;
+    }
+
+    .wrapper{
+        height: auto;
     }
 
     #clock,#uniLogo{
