@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="icon/png">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/background.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 </head>
 <body id="main">
 <div class="canvas-wrap">
@@ -42,6 +43,10 @@
 
         <section>
             <div class="wrapper">
+                <h1 id="intro_head_1">What is 'MORA GPA' <font size="50">?</font></h1>
+                <p id="intro_1">'MORA GPA' is a simple web based application which is capable of calculating the grade point averages(GPA) of
+                    Engineering Faculty Of University Of Moratuwa. This website based on the module data related to academic year <br> 2016/2017.
+                </p>
                 <form>
                     <ul class="semdepSelect">
                         <li id="ddSem"><select id="semDD" onchange="semDDOnChange()">
@@ -1135,6 +1140,13 @@
                         <!--31-->
                     </table>
                 </form>
+                <h1 id="intro_head_2">How to use ?</h1>
+                <p id="intro_2">First select your semester then select your deparrtmet(If you have). You can see a table which including details of the modules.
+                    "Module Code","Module Name","Credit","Type","Grade" these are the table data sections. Here you have to select module type. there are four types "GPA",
+                    "NGPA","Not Selected","No Exam". then you have to select you grades for each module. If you already have a c CGPA please add it on to "CGPA" field and hit the
+                    "Calculate my new GPA" button.then web display the your GPAs. If you need to calculate next semester GPA git "Goto Next Semester" button.
+                </p>
+
                 <ul id="functional" align="center">
                     <li><input type="number" id="olderGPA" style="visibility:hidden;" placeholder="CGPA"></li>
                     <li><input type="button" id="calcBtn" Value="Calculate My New GPA" onclick="displayResults();"
@@ -1142,7 +1154,6 @@
                     <li><input type="button" id="resetBtn" Value="Reset Fields" style="visibility:hidden;"
                                onclick="resetBtnOnclick();"></li>
                 </ul>
-
                 <ul id="results">
                     <li>
                         <ul style="-webkit-flex-direction: column; background: transparent; border: none;">
@@ -1178,6 +1189,9 @@
                     </li>
 
                 </ul>
+                <input type="button" id="nextSem" Value="Goto Next Semester" style="visibility: hidden;"
+                       onclick="gotoNextSem();">
+
             </div>
         </section>
 

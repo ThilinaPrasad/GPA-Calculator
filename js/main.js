@@ -14,6 +14,7 @@ var $modCredits = document.getElementsByClassName('modCredit');         // Modul
 var $modTypes = document.getElementsByClassName('modType');         // Module Type  divs
 var $rows = document.getElementsByClassName('subRow');              // Module credit  divs
 var $func = document.getElementById("functional");                // Semester select DD
+var $next = document.getElementById("nextSem");                    // Next Semester navigation
 var $displayedItems = 0;
 
 /*semester Drop Down On Change things here*/
@@ -41,6 +42,10 @@ function semDDOnChange(){
             $func.style.opacity = '0';
         }
     }
+    document.getElementById("intro_1").style.display = "none";
+    document.getElementById("intro_2").style.display = "none";
+    document.getElementById("intro_head_1").style.display = 'none';
+    document.getElementById("intro_head_2").style.display = 'none';
 }
 
 /*department Drop Down On Change things here*/
@@ -182,6 +187,15 @@ function ddReset(){
         $subGrade[i].selectedIndex = 0;
         $modTypes[i].selectedIndex=0;
     }
+}
+
+function gotoNextSem(){
+    $semSelectDD.selectedIndex=$semSelectDD.selectedIndex+1;
+    fillSubjects();
+    $oldGPA.value = $cGPA.innerText;
+    ddReset();
+    document.getElementById("results").style.visibility = "hidden";
+    $next.style.visibility = "hidden";
 }
 
 
@@ -558,6 +572,7 @@ var totEarnCredit = 0;
 var totSemCredit = 0;
 var totEarnNGPACredit = 0;
 
+var $sGPA = document.getElementById('sGPA');
 var $cGPA = document.getElementById('cGPA');
 var $oGPA = document.getElementById('oGPA');
 var resultdisplay;
@@ -577,6 +592,9 @@ function sGPALogic() {
             else {
                 totEarnCredit += (parseFloat($modCredits[i].innerHTML) * parseFloat($subGrade[i].value));
                 totSemCredit += parseFloat($modCredits[i].innerHTML);
+                if($semSelectDD.selectedIndex!=1) {
+                    $next.style.visibility = "visible";
+                }
             }
         }else if(typeTemp==1) {
             totEarnNGPACredit += (parseFloat($modCredits[i].innerHTML));
@@ -599,7 +617,7 @@ function displayResults() {
     var multifyCredit = 0;
     //alert(sem.toString());
     document.getElementById('results').style.opacity = resultdisplay;
-    document.getElementById('sGPA').innerText = temp;
+    $sGPA.innerText = temp;
     document.getElementById('NGPACredits').innerText = totEarnNGPACredit.toString();
 
     switch (sem){

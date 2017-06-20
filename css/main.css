@@ -126,9 +126,56 @@ li a.active {
     margin: 2% auto;
     width: 80vw;
     height: 80vh;
-    background: -webkit-repeating-linear-gradient(-45deg, #800000, #B22222 6px);
+    background: url("../img/back ground layer 2.png") repeat,-webkit-repeating-linear-gradient(-45deg, #800000, #B22222 6px);
     box-shadow:  2px 3px 32px 0px rgba(36,33,36,1);
     transition: height 1s ease-in-out;
+    border-radius: 25px;
+    border: 3px white solid;
+}
+
+p:first-letter{
+    text-transform: uppercase;
+    font-size: 22px;
+}
+p {
+    color: rgb(255, 255, 255);
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing:0.1em;
+    text-align:center;
+    text-transform: lowercase;
+    line-height: 120%;
+    font-size: 14pt;
+    font-variant: small-caps;
+    width: 90%;
+    text-shadow: #818181 4px 4px 4px;
+}
+
+#intro_head_1 , #intro_head_2{
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 0;
+    text-shadow: #818181 5px 5px 8px;
+    font-size: 30px;
+}
+
+#intro_head_1{
+    margin-top: 30px;
+}
+
+#intro_head_2{
+    margin-top: -45px;
+}
+
+#intro_1{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#intro_2{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
 }
 
 select:focus {
@@ -191,7 +238,7 @@ table th {
 }
 
 #semDD {
-    margin-top: 225px;
+
     margin-left: 250px;
     background-color: #B22222;
     width: 250px;
@@ -201,7 +248,14 @@ table th {
     color: white;
     border-radius: 50px;
     border-color: white;
-    transition: margin-top 1s, margin 1s;
+    transition: margin-top 1s, margin 1s,background-color 0.5s,color 0.5s,border-color 0.5s;
+}
+
+#semDD:hover{
+    background-color: white;
+    color: #B22222;
+    border-color: #B22222;
+
 }
 
 #functional {
@@ -244,6 +298,15 @@ input[type=button]{
     border: solid 3px #B22222;
 }
 
+#nextSem {
+    margin: auto;
+    color: #b24923;
+    background-color: white;
+    border: solid 3px #b24923;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
 #calcBtn:hover {
     background-color: #4CAF50;
     color: white;
@@ -252,6 +315,12 @@ input[type=button]{
 
 #resetBtn:hover {
     background-color: #B22222;
+    color: white;
+    border-color: white;
+}
+
+#nextSem:hover {
+    background-color: #b24923;
     color: white;
     border-color: white;
 }
@@ -307,7 +376,7 @@ input[type=number] {
 }
 
 footer{
-    background: -webkit-repeating-linear-gradient(-45deg, #800000, #B22222 6px);
+    background:url("../img/back ground layer 2.png") repeat, -webkit-repeating-linear-gradient(-45deg, #800000, #B22222 6px);
     width: auto;
     height: auto;
     border: 3px white solid;
@@ -344,6 +413,8 @@ footer{
 #donate-btn img:hover{
     border-color: white;
 }
+
+
 
 /*responsive*/
 @media screen and (max-width: 450px) {
@@ -433,5 +504,7 @@ footer{
         padding: 2px 5px;
     }
 }
+
+
 
 /*responsive*/
