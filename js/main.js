@@ -16,6 +16,7 @@ var $rows = document.getElementsByClassName('subRow');              // Module cr
 var $func = document.getElementById("functional");                // Semester select DD
 var $next = document.getElementById("nextSem");                    // Next Semester navigation
 var $displayedItems = 0;
+var $fSCalculatedGPA;
 
 /*semester Drop Down On Change things here*/
 function semDDOnChange(){
@@ -41,6 +42,10 @@ function semDDOnChange(){
             $hiddenTable.style.display='none';
             $func.style.opacity = '0';
         }
+    }
+
+    if($semSelectDD.selectedIndex==2){
+        $oldGPA.value=$fSCalculatedGPA;
     }
     document.getElementById("intro_1").style.display = "none";
     document.getElementById("intro_2").style.display = "none";
@@ -625,6 +630,7 @@ function displayResults() {
         case 1:                            //Sem 1
             $cGPA.innerText = temp;
             $oGPA.innerText = temp;
+            $fSCalculatedGPA = temp;
             break;
         case 2:                            //Sem 2
             multifyCredit = 15.0;
