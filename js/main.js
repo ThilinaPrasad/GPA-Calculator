@@ -46,6 +46,8 @@ function semDDOnChange(){
 
     if($semSelectDD.selectedIndex==2){
         $oldGPA.value=$fSCalculatedGPA;
+    }else{
+        $oldGPA.value = null;
     }
     document.getElementById("intro_1").style.display = "none";
     document.getElementById("intro_2").style.display = "none";
