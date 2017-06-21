@@ -252,6 +252,12 @@ table th {
     transition: margin-top 1s, margin 1s,background-color 0.5s,color 0.5s,border-color 0.5s;
 }
 
+#courseType{
+    margin:0;
+    padding: 10px;
+    top: 40px;
+}
+
 #semDD:hover{
     background-color: white;
     color: #B22222;
