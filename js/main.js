@@ -250,7 +250,7 @@ function cse($sem){
             /*semester 4 Subjects*/
             $modCodeData = ['CS3022','CS3032','CS3042','MA2033','MA2063','EN2062','DE1XXX','CS2212','CS3953'];
             $subsData = ["Software Engineering","Computer Networks","Database Systems","Linear Algebra","Differential Equations & Applications","Signals & Systems","Humanities Elective I",'Programming Challenge II','Technical Writing'];
-            $creditsData =['3.0','3.0','3.0','2.0','2.0','2.5','2.0'];
+            $creditsData =['3.0','3.0','3.0','2.0','2.0','2.5','2.0','1.0','1.5'];
             fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 5:
