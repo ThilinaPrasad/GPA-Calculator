@@ -419,9 +419,9 @@ function me($sem){
             break;
         case 4:
             /*semester 4 Subjects*/
-            $modCodeData = ['ME2050','ME2060','ME2160','ME2170','ME2080','ME2280','MA2033','ME2920','CH2803','MA2053','MN2010'];
-            $subsData = ['Mechanics of Machines II','Mechanics of Materials II','Introduction to Automotive Engineering','Manufacturing Engineering II','Design of Machine Elements','Sensors/Actuators & Smart Systems','Linear Algebra','Social Community Project-Mechatronics','Process Engineering','Graph Theory','Entrepreneurial Leadership'];
-            $creditsData =['3.0','4.0','2.0','4.0','3.0','3.0','2.0','2.0','2.0','2.0','2.0'];
+            $modCodeData = ['ME2050','ME2060','ME2032','ME2160','ME2170','ME2080','ME2280','MA2033','ME2920','CH2803','MA2053','MN2010'];
+            $subsData = ['Mechanics of Machines II','Mechanics of Materials II','Thermodynamics of Heat Engines & Transfer Devices','Introduction to Automotive Engineering','Manufacturing Engineering II','Design of Machine Elements','Sensors/Actuators & Smart Systems','Linear Algebra','Social Community Project-Mechatronics','Process Engineering','Graph Theory','Entrepreneurial Leadership'];
+            $creditsData =['3.0','4.0','4.0','2.0','4.0','3.0','3.0','2.0','2.0','2.0','2.0','2.0'];
             fillDataLogic($modCodeData,$subsData,$creditsData);
             break;
         case 5:
